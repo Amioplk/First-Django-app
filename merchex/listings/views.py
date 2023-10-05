@@ -9,18 +9,11 @@ def hello(request):
     return render(request, 'listings/hello.html', {'bands': bands})
 
 def about(request):
-    return HttpResponse('<h1>À propos</h1> <p>Nous adorons merch !</p>')
+    return render(request, 'listings/about.html')
 
 def listings(request):
     listings = Listing.objects.all()
-    return HttpResponse(f"""
-        <p>Mes annonces :<p>
-        <ul>
-            <li>{listings[0].title}</li>
-            <li>{listings[1].title}</li>
-            <li>{listings[2].title}</li>
-        </ul>
-    """)
+    return render(request, 'listings/listings.html', {'listings': listings})
 
 def contact_us(request):
-    return HttpResponse('<h1></h1><p>Contactez-nous à l\'adresse suivante : <a href="mailto:amirworms@gmail.com">Mail de contact</a><p>')
+    return render(request, 'listings/contact.html')
