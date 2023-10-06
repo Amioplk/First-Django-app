@@ -28,5 +28,5 @@ class Listing(models.Model):
     title = models.fields.CharField(max_length=100)
     description = models.fields.CharField(max_length=1000)
     sold = models.fields.BooleanField(default=False)
-    year = models.fields.IntegerField(null=True)
+    year = models.fields.IntegerField(null=True, validators=[MinValueValidator(1900), MaxValueValidator(2021)])
     type = models.fields.CharField(choices=Type.choices, max_length=20)
