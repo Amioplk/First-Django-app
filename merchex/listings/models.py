@@ -19,6 +19,7 @@ class Band(models.Model):
     )
     active = models.fields.BooleanField(default=True)
     official_homepage = models.fields.URLField(null=True, blank=True)
+    record_company = models.fields.CharField(null=True, max_length=100)
 
 class Listing(models.Model):
 
