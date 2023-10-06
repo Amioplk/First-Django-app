@@ -18,4 +18,15 @@ class Band(models.Model):
     official_homepage = models.fields.URLField(null=True, blank=True)
 
 class Listing(models.Model):
+
+    class Type(models.TextChoices):
+        RECORDS = 'Records'
+        CLOTHING = 'Clothing'
+        POSTERS = 'Posters'
+        OTHER = 'Miscellaneous'
+
     title = models.fields.CharField(max_length=100)
+    description = models.fields.CharField(max_length=1000)
+    sold = models.fields.BooleanField(default=False)
+    year = models.fields.IntegerField(null=True)
+    type = models.fields.CharField(choices=Type.choices, max_length=20)
