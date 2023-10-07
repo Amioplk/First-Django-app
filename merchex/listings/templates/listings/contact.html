@@ -3,6 +3,13 @@
 {% block content %}
 
 <h1>Contact</h1>
-<p>Contactez-nous à l'adresse suivante : <a href="mailto:amirworms@gmail.com">Mail de contact</a><p>
+
+<form action="" method="post" novalidate>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Envoyer" />
+</form>
+
+<p>Sinon, contactez-nous directement à l'adresse suivante : <a href="mailto:amirworms@gmail.com">Mail de contact</a><p>
 
 {% endblock %}
