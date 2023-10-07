@@ -23,14 +23,14 @@ def band_listings(request, band_id):
 def about(request):
     return render(request, 'listings/about.html')
 
-def listings_list(request):
+def listing_list(request):
     listings = Listing.objects.all()
-    return render(request, 'listings/listings_list.html', {'listings': listings})
+    return render(request, 'listings/listing_list.html', {'listings': listings})
 
-def listings_detail(request, listing_id):
+def listing_detail(request, listing_id):
     listing = Listing.objects.get(id=listing_id)
     return render(request,
-                  'listings/listings_detail.html',
+                  'listings/listing_detail.html',
                   {'listing': listing})
 
 def contact_us(request):
