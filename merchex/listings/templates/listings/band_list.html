@@ -7,7 +7,7 @@
 <ul>
     {% for band in bands %}
         <li>
-            {{ band.name }}
+            <a href="{% url 'band-detail' band.id %}">{{ band.name }}</a>
         </li>
     {% endfor %}
 </ul>

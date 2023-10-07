@@ -20,8 +20,8 @@ from listings import views as listings_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('bands/', listings_views.band_list),
-    path('bands/<int:id>/', listings_views.band_detail), # ajouter ce motif sous notre autre motif de groupes    path('about_us/', listings_views.about),
+    path('bands/', listings_views.band_list, name="band-list"),
+    path('bands/<int:id>/', listings_views.band_detail, name="band-detail"),
     path('listings/', listings_views.listings),
     path('contact_us/', listings_views.contact_us),
 ]
