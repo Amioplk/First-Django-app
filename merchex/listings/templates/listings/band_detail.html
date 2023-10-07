@@ -6,6 +6,8 @@
 
 <h2>{{ band.name }}</h2>
 
+<a href="{% url 'band-listings' band.id %}">Voir la liste des annonces liées à ce groupe</a>
+
 <ul>
  <li>Genre : {{ band.get_genre_display }}</li>
  <li>Année de formation : {{ band.year_formed }}</li>

@@ -22,6 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('bands/', listings_views.band_list, name="band-list"),
     path('bands/<int:id>/', listings_views.band_detail, name="band-detail"),
-    path('listings/', listings_views.listings),
+    path('bands/<int:id>/listings', listings_views.band_listings, name="band-listings"),
+    path('listings/', listings_views.listings_list, name="listings-list"),
+    path('listings/<int:listing_id>/', listings_views.listings_detail, name="listings-detail"),
     path('contact_us/', listings_views.contact_us),
 ]
