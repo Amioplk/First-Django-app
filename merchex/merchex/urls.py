@@ -28,4 +28,5 @@ urlpatterns = [
     path('contact_us/', listings_views.contact_us, name='contact'),
     path('success_email/', listings_views.email_sent, name='email-sent'),
     path('about_us', listings_views.about, name="about"),
+    path('bands/add/', listings_views.band_create, name='band-create'),
   ]
