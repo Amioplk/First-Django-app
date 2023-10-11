@@ -47,9 +47,13 @@ def contact_us(request):
                 from_email=form.cleaned_data['email'],
                 recipient_list=['amirworms@gmail.com'],
             )
-        # return redirect('email-sent')
+        return redirect('email-sent')
     else:
         form = ContactUsForm()
     return render(request,
                 'listings/contact.html',
                 {'form': form})
+
+def email_sent(request):
+    return render(request,
+                  'listings/email_sent.html')
