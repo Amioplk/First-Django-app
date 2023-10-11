@@ -19,4 +19,6 @@
 
 <p>{{ band.biography }}</p>
 
+<a href="{% url 'band-update' band.id %}">Modifier les informations de ce groupe</a>
+
 {% endblock %}
