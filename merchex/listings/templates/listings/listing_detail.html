@@ -15,4 +15,6 @@
 
 <p>{{ listing.description }}</p>
 
+<a href="{% url 'listings-update' listing.id %}">Modifier les informations de cette annonce</a>
+
 {% endblock %}
